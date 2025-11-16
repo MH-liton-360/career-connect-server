@@ -48,9 +48,7 @@ async function run() {
             res.send("Career Connect Server is Running...");
         });
 
-        /* ===========================
-           USERS ROUTES
-        ============================ */
+
 
         // Fetch All Users
         app.get('/api/users', async (req, res) => {
@@ -102,9 +100,7 @@ async function run() {
             }
         });
 
-        /* ===========================
-           APPLIED JOBS ROUTES
-        ============================ */
+
 
         // Get jobs (all or filter by userId)
         app.get('/api/applied-jobs', async (req, res) => {
@@ -140,9 +136,8 @@ async function run() {
             }
         });
 
-        /* ===========================
-           RESUME ROUTES
-        ============================ */
+
+
 
         // Upload resume
         app.post('/api/upload-resume', upload.single('resume'), async (req, res) => {
@@ -180,9 +175,7 @@ async function run() {
             }
         });
 
-        /* ===========================
-           ADMIN: JOB MANAGEMENT ROUTES
-        ============================ */
+
 
         // Add Job
         app.post('/api/jobs', async (req, res) => {
@@ -216,9 +209,6 @@ async function run() {
             }
         });
 
-        /* ===========================
-           START SERVER
-        ============================ */
 
         app.listen(port, () => {
             console.log(`🚀 Server running on port ${port}`);
