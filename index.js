@@ -34,7 +34,7 @@ const client = new MongoClient(uri, {
 
 async function run() {
     try {
-        await client.connect();
+        // await client.connect();
         console.log("✅ MongoDB Connected!");
 
         const db = client.db("careerConnect");
@@ -189,7 +189,7 @@ async function run() {
         });
 
         // Get Jobs
-        app.get('/api/jobs', async (req, res) => {
+        app.get('/api/all-jobs', async (req, res) => {
             try {
                 const jobs = await jobsCollection.find().toArray();
                 res.send(jobs);
